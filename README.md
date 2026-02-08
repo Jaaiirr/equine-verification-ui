@@ -1,16 +1,84 @@
-# React + Vite
+# 🐎 EquiTrust
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web platform designed to reduce risk and increase transparency in horse buying and selling.
 
-Currently, two official plugins are available:
+## ❗ Problem
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Buying a horse is a **high-risk, high-cost transaction** often affected by:
 
-## React Compiler
+- Lack of verified medical history
+- No standardized performance data
+- No credibility or reputation system for sellers
+- Marketplaces acting as simple classified ads without validation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This results in **financial loss, mistrust, and legal disputes** for buyers.
 
-## Expanding the ESLint configuration
+## 💡 Solution
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+EquiTrust aims to provide:
+
+- Verified medical and performance records
+- Seller reputation and trust indicators
+- Transparent horse profiles backed by data
+- A marketplace focused on **trust, not listings**
+
+## 🧩 Tech Stack
+
+- React
+- Vite
+- JavaScript (ES6+)
+- Feature-based modular architecture
+- Git Flow + Conventional Commits
+
+## 📂 Project Structure
+
+src/
+├── features/         # Domain-driven features
+│   ├── horses/       # Horse profiles & data
+│   ├── sellers/      # Seller profiles & reputation
+│   ├── verification/ # Medical & performance verification
+│   └── marketplace/  # Listings & discovery
+├── pages/            # Application pages
+├── router/           # App routing configuration
+├── components/       # Shared UI components
+├── services/         # API & data access
+├── hooks/            # Custom hooks
+├── utils/            # Helpers & formatters
+├── test/             # Unit and functional tests
+
+## ⚙️ Setup
+
+- npm install
+- npm run dev
+
+## 🌱 Git Workflow
+
+This project follows a simplified **Git Flow** strategy to ensure code stability and traceability.
+
+### Branches
+
+- `main` – production-ready code
+- `develop` – integration branch
+- `feature/*` – new features or improvements
+- `fix/*` – bug fixes
+- `hotfix/*` – critical production fixes
+
+### Workflow
+
+1. Create a feature branch from `develop`
+2. Open a Pull Request into `develop`
+3. After validation, merge into `develop`
+4. Releases are merged from `develop` into `main`
+
+## 📝 Commit Convention
+
+This project follows the **Conventional Commits** specification to ensure a clear and consistent commit history.
+
+Commit messages are **automatically validated** using tooling (Husky + Commitlint).  
+If a commit message does not follow the convention, it will be rejected.
+
+### Format
+
+```txt
+<type>(<scope>): <description>
+
