@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "name": "Thunderbolt",
+    "age": 8,
+    "discipline": "Dressage",
+    "price": 25000,
+    "breed": "Hanoverian",
+    "location": "Texas, USA",
+    "verificationStatus": "VERIFIED",
+    "images": [""]
+  },
+  {
+    "id": "2",
+    "name": "Silver Star",
+    "age": 6,
+    "discipline": "Show Jumping",
+    "price": 18000,
+    "breed": "Dutch Warmblood",
+    "location": "California, USA",
+    "verificationStatus": "PENDING",
+    "images": [""]
+  },
+  {
+    "id": "3",
+    "name": "Midnight Spirit",
+    "age": 10,
+    "discipline": "Eventing",
+    "price": 32000,
+    "breed": "Thoroughbred",
+    "location": "Florida, USA",
+    "verificationStatus": "REJECTED",
+    "images": [""]
+  }
+]
