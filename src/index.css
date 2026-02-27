@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    /* bg */
+    --color-bg-light: rgb(245 246 248 / var(--tw-bg-opacity, 1));
+    --color-forest: rgb(26 46 38 / var(--tw-bg-opacity, 1));
+    --color-cream: rgb(253 251 247 / var(--tw-bg-opacity, 1));
+    /* btn, icons, hovers */
+    --color-btn-primary: rgb(0 81 255 / var(--tw-bg-opacity, 1));
+    /* Title subtitle */
+    --color-text-primary: rgb(15 23 42 / var(--tw-text-opacity, 1));
+    /* Text */
+    --color-text-secondary: rgb(71 85 105 / var(--tw-text-opacity, 1));
+    /* text footer */
+    --color-text-footer-primary: rgb(148 163 184 / var(--tw-text-opacity, 1));
+    --color-text-footer-secondary: rgb(100 116 139 / var(--tw-text-opacity, 1));
+    --color-bg-footer: rgb(15 21 35 / var(--tw-text-opacity, 1))
+}
