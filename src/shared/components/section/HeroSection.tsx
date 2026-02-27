@@ -1,9 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { LuBadgeCheck } from "react-icons/lu";
 import { PiMagnifyingGlassThin } from "react-icons/pi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 
 const HeroSection = () => {
+    const navigate = useNavigate();
+    const [search, setSearch] = useState('');
+    const [status, setStatus] = useState('');
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        navigate(`/marketplace?search=${search}&status=${status}`);
+    };
+
+
     return (
         <section className="relative h-150 flex items-center justify-center overflow-hidden">
             <figure className="absolute inset-0 z-0">
@@ -26,35 +38,42 @@ const HeroSection = () => {
                 {/* search */}
                 <div className="bg-white flex flex-col gap-2 max-w-4xl mx-auto p-2 shadow-2xl rounded-xl md:flex-row">
                     <form
-                        action=""
-                        className="border-r border-slate-100 flex flex-1 items-center px-4"
+                        onSubmit={handleSearch}
+                        className="border-r border-slate-100 flex flex-1 items-center px-0.5"
                     >
                         <span className="mr-2 text-text-secondary text-xl">
                             <PiMagnifyingGlassThin />
                         </span>
                         <input
                             type="text"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
                             className="w-full border-none bg-transparent py-3 text-slate-700 text-sm outline-none focus:ring-0"
                             placeholder="Raza, disciplina o ubicación..."
                         />
-                    </form>
-                    <div className="border-slate-100 flex flex-1 items-center px-4 relative md:border-r">
-                        <span className="mr-2 text-slate-400 text-xl">
-                            <LuBadgeCheck />
-                        </span>
-                        <select
-                            name="membresias"
-                            className="w-full bg-transparent cursor-pointer py-3 text-sm text-text-secondary border-none outline-none focus:outline-none focus:ring-0 focus:border-none appearance-none"
+                        <div className="w-full border-slate-100 flex items-center px-4 relative md:border-r">
+                            <span className="mr-2 text-slate-400 text-xl">
+                                <LuBadgeCheck />
+                            </span>
+                            <select
+                                value={status}
+                                onChange={(e) => setStatus(e.target.value)}
+                                name="membresias"
+                                className="w-full bg-transparent cursor-pointer py-3 text-sm text-text-secondary border-none outline-none focus:outline-none focus:ring-0 focus:border-none appearance-none"
+                            >
+                                <option value="">Todos los estados</option>
+                                <option value="platinum">Verificado Platinum</option>
+                                <option value="gold">Verificado Gold</option>
+                            </select>
+                            <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-text-secondary text-2xl"><MdKeyboardArrowDown /></span>
+                        </div>
+                        <button
+                            type="submit"
+                            className="w-96 flex bg-btn-primary cursor-pointer font-bold gap-2 items-center justify-center px-8 py-4 text-white text-lg transition-all rounded-lg shadow-lg shadow-btn-primary/20 hover:bg-btn-primary/90 md:text-lg"                            
                         >
-                            <option value="">Todos los estados</option>
-                            <option value="">Verificado Platinum</option>
-                            <option value="">Verificado Gold</option>
-                        </select>
-                        <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-text-secondary text-2xl"><MdKeyboardArrowDown /></span>
-                    </div>
-                    <button className="flex bg-btn-primary cursor-pointer font-bold gap-2 items-center justify-center px-8 py-4 text-white text-lg transition-all rounded-lg shadow-lg shadow-btn-primary/20 hover:bg-btn-primary/90 md:text-lg">
                         Buscar Ahora
-                    </button>
+                        </button>
+                    </form>                    
                 </div>
             </section>
         </section>

@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import LayoutAdminPage from '../features/horses/pages/LayoutAdminPage';
 import HomePage from '../features/horses/pages/HomePage';
 import LoginPage from '../features/horses/pages/auth/LoginPage';
+import MarketPlacePage from '../features/horses/pages/MarketPlacePage';
 
 const router = createBrowserRouter(
 	[
@@ -9,16 +10,14 @@ const router = createBrowserRouter(
 			path: '/',
 			element: <LayoutAdminPage />,
 			children: [
-				{
-					index: true,
-					element: <HomePage />
-				}
+				{ index: true, element: <HomePage /> },
+				{ path: '/marketplace', element: <MarketPlacePage /> },
+				// { path: '/horse/:id',	element: <HorseDetailPage /> },
+				{ path: '/login',	element: <LoginPage />	},
+				// { path: '/register',	element: <RegisterPage /> },
+				// { path: '/publicar',	element: <PublicPage /> }
 			],
 		},
-		{
-			path: '/login',
-			element: <LoginPage />,
-		}
 	],
 	{
 		basename: "/equine-verification-ui",
