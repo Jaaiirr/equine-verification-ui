@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>((props, ref) => {
+const Input = forwardRef<HTMLInputElement>((props, ref) => {
     return (
         <input 
         ref={ref} // Pasar el ref
