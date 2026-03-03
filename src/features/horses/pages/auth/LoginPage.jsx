@@ -5,7 +5,7 @@ import { useState } from "react";
 import  { Input } from "../../../../shared/components/ui/index"
 // Components
 import FormTitle from "../../../../shared/components/ui/form/formTitle/FormTitle";
-import FormField from "../../../../shared/components/ui/form/FormField/FormField";
+import FormField from "../../../../shared/components/ui/form/formField/FormField";
 //Icons
 import { RiLockPasswordLine, RiLoginBoxLine } from "react-icons/ri";
 import { MdOutlineVisibility, MdOutlineVisibilityOff, MdEmail } from "react-icons/md";
