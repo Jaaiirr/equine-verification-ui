@@ -7,7 +7,6 @@ import  { Input } from "../../../../shared/components/ui/index"
 import FormTitle from "../../../../shared/components/ui/form/formTitle/FormTitle";
 import FormField from "../../../../shared/components/ui/form/FormField/FormField";
 //Icons
-import { CiUser } from "react-icons/ci";
 import { RiLockPasswordLine, RiLoginBoxLine } from "react-icons/ri";
 import { MdOutlineVisibility, MdOutlineVisibilityOff, MdEmail } from "react-icons/md";
 import { RiShieldUserFill } from "react-icons/ri";
@@ -16,7 +15,7 @@ import { RiShieldUserFill } from "react-icons/ri";
 
 
 
-const Login = () => {
+const LoginPage = () => {
 //   const navigate = useNavigate();
   const [showkPass, setShowPass] = useState(false);
   const {
@@ -123,4 +122,4 @@ const Login = () => {
     </main>
   );
 };
-export default Login;
+export default LoginPage;

@@ -21,7 +21,7 @@ const HeaderSection = () => {
     ];
 
     const goToContact = () => {
-        navigate('/login')
+        navigate('login')
     };
 
     return (

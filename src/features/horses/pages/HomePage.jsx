@@ -12,10 +12,10 @@ const HomePage = () => {
             <HeroSection />
             <StatsSection />
             <HowItWorkSection />
-            <FeactureHorsesSection />            
-            <TestimonialsSection />           
-            <CtaSection />           
-        </>        
+            <FeactureHorsesSection />
+            <TestimonialsSection />
+            <CtaSection />
+        </>
     );
 };
 export default HomePage;

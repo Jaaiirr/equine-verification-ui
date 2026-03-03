@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { RiShieldUserFill } from "react-icons/ri";
@@ -12,6 +12,7 @@ const classNames = (...classes) => {
 
 const Header = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const navigation = [
         { name: 'Mercado', href: '#mercado', current: true },
         { name: 'Verificación', href: '#verificacion', current: false },
@@ -23,6 +24,19 @@ const Header = () => {
         navigate('/login')
     };
 
+    const handleTitleClick = (e) => {
+        e.preventDefault();
+
+        if (location.pathname === '/') {
+            window.scroll({
+                top: 0,
+                behavior: 'smooth'
+            });            
+        } else {
+            navigate('/');
+        }
+    };
+
     return (
         <Disclosure as="nav" className="backdrop-blur-md bg-white/30 border-b border-slate-200/60 fixed w-full text-text-primary top-0 z-50">
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-16">
@@ -30,7 +44,13 @@ const Header = () => {
                     {/* Logo y nombre */}
                     <div className="flex w-auto items-center">
                         <RiShieldUserFill className='text-btn-primary size-9 h-8 w-auto' />
-                        <span className='font-bold text-xl tracking-tight text-text-primary'>Confianza <span className='text-btn-primary'>Ecuestre</span></span>
+                        <Link 
+                            to='/'
+                            onClick={handleTitleClick} 
+                            className='font-bold text-xl tracking-tight text-text-primary'
+                        >
+                            Confianza <span className='text-btn-primary'>Ecuestre</span>
+                        </Link>
                     </div>
                     <div className="sm:hidden">
                         {/* Mobile menu button*/}

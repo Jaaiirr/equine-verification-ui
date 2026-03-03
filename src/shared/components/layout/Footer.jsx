@@ -54,8 +54,8 @@ const Footer = () => {
                     <article className="col-span-2 md:col-span-1">
                         <h6 className="font-bold mb-6">Contacto</h6>
                         <ul className="space-y-4 text-sm text-text-secondary">
-                            <li className="flex gap-2 items-center"><CiLocationOn />Madrid, España</li>
-                            <li className="flex gap-2 items-center"><MdLocalPhone />+34 900 123 456</li>
+                            <li className="flex gap-2 items-center"><CiLocationOn />Bogotá, Colombia</li>
+                            <li className="flex gap-2 items-center"><MdLocalPhone />+57 300 123 4568</li>
                             <li className="flex gap-2 items-center"><MdMail />info@confianzaecuestre.com</li>                            
                         </ul>
                     </article>

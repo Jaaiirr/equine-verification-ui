@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // Component
 import HeaderSection from "../../../shared/components/section/marketPlace/HeaderSection";
+import MainSection from "../../../shared/components/section/marketPlace/MainSection";
 
 
 const MarketPlacePage = () => {
@@ -17,8 +18,10 @@ const MarketPlacePage = () => {
     }, [search, status]);
 
     return (
-        <HeaderSection />
+        <>
+        {/* <HeaderSection /> */}
+        <MainSection />
+        </>        
     );
 };
-
 export default MarketPlacePage;

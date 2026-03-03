@@ -15,7 +15,12 @@ const FeactureHorsesSection = () => {
                             Explora nuestra selección de ejemplares con certificación de salud AAA.
                         </p>
                     </div>
-                    <Link className="flex gap-2 font-bold items-center text-btn-primary transition-all hover:gap-3">Ver todo el mercado <IoIosArrowRoundForward /></Link>
+                    <Link
+                        to='marketplace' 
+                        className="flex gap-2 font-bold items-center text-btn-primary transition-all hover:gap-3"
+                    >
+                            Ver todo el mercado <IoIosArrowRoundForward />
+                    </Link>
 
                 </article>
                 {/* card caballos */}

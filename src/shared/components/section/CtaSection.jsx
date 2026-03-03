@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
 // icons
-import { MdVerified, MdGroups } from "react-icons/md";
-import { ImQuotesRight } from "react-icons/im";
+import { MdGroups } from "react-icons/md";
 import { FaCircleCheck } from "react-icons/fa6";
 
 
 const CtaSection = () => {
+    const navigate = useNavigate();
+
+    const goToContact = () => {
+        navigate('/details')
+    };
+
     return (
         <section id="verificacion" className="py-20">
             <div className="max-w-7xl mx-auto px-4">
@@ -15,7 +21,12 @@ const CtaSection = () => {
                             Únete a la élite del mercado ecuestre. Solicita tu auditoría de verificación hoy mismo y destaca sobre el resto.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button className="bg-btn-primary cursor-pointer font-bold py-4 px-8 text-white transition-all shadow-xl shadow-btn-primary/40 rounded-xl hover:bg-sky-700">Empezar Verificación</button>
+                            <button
+                                onClick={goToContact} 
+                                className="bg-btn-primary cursor-pointer font-bold py-4 px-8 text-white transition-all shadow-xl shadow-btn-primary/40 rounded-xl hover:bg-sky-700"
+                            >
+                                Empezar Verificación
+                            </button>
                             <button className="bg-white/10 border border-white/20 cursor-pointer font-bold py-4 px-8 text-white transition-all shadow-xl rounded-xl hover:bg-white/20">Saber más</button>
                         </div>
                     </div>
