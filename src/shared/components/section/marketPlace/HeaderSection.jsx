@@ -1,56 +1,37 @@
-import { useNavigate, Link, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { RiShieldUserFill } from "react-icons/ri";
+import { IoIosNotifications } from "react-icons/io";
+import { MdFavorite, MdAccountCircle } from "react-icons/md";
 // ui
-import BtnContact from '../ui/Button';
+import BtnContact from '../../ui/Button';
 
 const classNames = (...classes) => {
     return classes.filter(Boolean).join(' ')
 };
 
-
-const Header = () => {
+const HeaderSection = () => {
     const navigate = useNavigate();
-    const location = useLocation();
     const navigation = [
-        { name: 'Mercado', href: '#mercado', current: true },
-        { name: 'Verificación', href: '#verificacion', current: false },
-        { name: 'Cómo funciona', href: '#comoFunciona', current: false },
-        { name: 'Testimonios', href: '#testimonios', current: false },        
+        { name: 'Comprar', href: '#comprar', current: true },
+        { name: 'Vender', href: '#vender', current: false },
+        { name: 'Verificación', href: '#Verificación', current: false },
+        { name: 'Servicios', href: '#servicios', current: false },
     ];
 
     const goToContact = () => {
-        navigate('/login')
-    };
-
-    const handleTitleClick = (e) => {
-        e.preventDefault();
-
-        if (location.pathname === '/') {
-            window.scroll({
-                top: 0,
-                behavior: 'smooth'
-            });            
-        } else {
-            navigate('/');
-        }
+        navigate('login')
     };
 
     return (
-        <Disclosure as="nav" className="backdrop-blur-md bg-white/30 border-b border-slate-200/60 fixed w-full text-text-primary top-0 z-50">
+        <Disclosure as="nav" className="backdrop-blur-md bg-white border-b border-slate-200/60 fixed w-full text-text-primary top-0 z-50">
             <div className="w-full mx-auto px-4 sm:px-6 lg:px-16">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo y nombre */}
                     <div className="flex w-auto items-center">
                         <RiShieldUserFill className='text-btn-primary size-9 h-8 w-auto' />
-                        <Link 
-                            to='/'
-                            onClick={handleTitleClick} 
-                            className='font-bold text-xl tracking-tight text-text-primary'
-                        >
-                            Confianza <span className='text-btn-primary'>Ecuestre</span>
-                        </Link>
+                        <span className='font-bold text-xl tracking-tight text-text-primary'>EquineMarket</span>
                     </div>
                     <div className="sm:hidden">
                         {/* Mobile menu button*/}
@@ -61,7 +42,7 @@ const Header = () => {
                         </DisclosureButton>
                     </div>
                     {/* Desktop Navigation */}
-                    <div className="hidden items-center justify-end gap-8 sm:flex lg:gap-12">
+                    <div className="hidden items-center justify-end gap-4 sm:flex lg:gap-12">
                         <div className="flex gap-4 lg:gap-8">
                             {navigation.map((item) => (
                                 <a
@@ -80,15 +61,18 @@ const Header = () => {
                         {/* Button Contact - Desktop */}
                         <div className="shrink-0">
                             <BtnContact onClick={goToContact}>
-                                Iniciar Sesión
+                                Publicar Caballo
                             </BtnContact>
-                            {/* <Link 
-                                to="" 
-                                className='bg-btn-primary cursor-pointer font-medium px-5 py-2 rounded-lg text-white transition-transform hover:scale-105 hover:bg-primary/90 hover:text-white md:px-3 lg:px-5'
-                            >
-                                Iniciar Sesión
-                            </Link> */}
-                        </div>                        
+                        </div>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><IoIosNotifications /></span>
+                        </button>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center text-text-primary transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><MdFavorite /></span>
+                        </button>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center text-text-primary transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><MdAccountCircle /></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -111,15 +95,24 @@ const Header = () => {
                     ))}
                     {/* Language Switcher - Mobile */}
                     <div className="flex gap-2 px-3 py-2 justify-end">
-                        <BtnContact
-                            onClick={goToContact}
-                        >
-                            Iniciar Sesión
+                        <BtnContact onClick={goToContact}>
+                            Publicar Caballo
                         </BtnContact>
+                    </div>
+                    <div className='flex justify-between'>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><IoIosNotifications /></span>
+                        </button>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center text-text-primary transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><MdFavorite /></span>
+                        </button>
+                        <button className='bg-gray-100 cursor-pointer flex h-10 items-center justify-center text-text-primary transition-colors rounded-lg w-10 hover:bg-gray-200'>
+                            <span className='text-[20px]'><MdAccountCircle /></span>
+                        </button>
                     </div>
                 </div>
             </DisclosurePanel>
         </Disclosure>
     );
 };
-export default Header;
+export default HeaderSection;
