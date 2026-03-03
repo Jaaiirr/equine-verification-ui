@@ -10,7 +10,7 @@ const MainSection = () => {
 
 
     return (
-        <main className="flex-1 max-w-375 mx-auto px-6 py-8 w-full lg:px-10">
+        <section className="flex-1 max-w-375 mx-auto px-6 py-8 w-full lg:px-10">
             <section className="flex flex-col gap-6">
                 {/* title */}
                 <div className="flex flex-col gap-4">
@@ -279,7 +279,7 @@ const MainSection = () => {
                     onPageChange={setPage}
                 />
             </section>
-        </main>
+        </section>
     );
 };
 export default MainSection;

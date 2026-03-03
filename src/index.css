@@ -18,3 +18,12 @@
     --color-text-footer-secondary: rgb(100 116 139 / var(--tw-text-opacity, 1));
     --color-bg-footer: rgb(15 21 35 / var(--tw-text-opacity, 1))
 }
+
+@utility scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@utility scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
